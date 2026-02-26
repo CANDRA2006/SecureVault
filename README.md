@@ -1,6 +1,12 @@
-# IN THE PROCESS
+# SecureVault v2.0
+
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Language: C++17](https://img.shields.io/badge/Language-C%2B%2B17-brightgreen.svg)
+![Crypto: AES-256-GCM](https://img.shields.io/badge/Crypto-AES--256--GCM-orange.svg)
 
 **SecureVault** adalah aplikasi enkripsi file command-line berbasis **C++ + x86-64 Assembly** dengan kriptografi modern (AES-256-GCM), key derivation yang kuat (PBKDF2-HMAC-SHA256), dan format file berversi.
+
+> v2.0 merupakan upgrade penuh dari versi pembelajaran ke implementasi production-grade.
 
 ---
 
@@ -286,6 +292,15 @@ Lihat [`docs/security_considerations.md`](docs/security_considerations.md) untuk
 - Side-channel via timing pada KDF (PBKDF2 tidak constant-time)
 - Metadata confidentiality dari info command (salt/nonce visible)
 - Keamanan di sistem operasi yang sudah terkompromi
+
+---
+
+## License
+
+MIT License — Copyright (c) 2026 CANDRA
+
+Bebas digunakan, dimodifikasi, dan didistribusikan untuk tujuan apapun selama
+mencantumkan copyright notice ini. Lihat file [LICENSE](LICENSE) untuk teks lengkap.
 
 ---
 
