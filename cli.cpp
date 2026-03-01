@@ -57,7 +57,7 @@
 
 namespace {
 
-// ── Exit codes ────────────────────────────────────────────────────────────
+// ── Exit codes ─
 constexpr int EXIT_OK     = 0;
 constexpr int EXIT_USAGE  = 1;
 constexpr int EXIT_IO     = 2;
@@ -149,7 +149,7 @@ std::string read_password_confirmed(const char* prompt) {
     return a; // NRVO — copy elided
 }
 
-// ── Helpers ───────────────────────────────────────────────────────────────
+// ── Helpers ────
 bool file_exists(const std::string& path) {
     std::ifstream f(path);
     return f.good();
@@ -162,7 +162,7 @@ void print_hex(const uint8_t* data, size_t len) {
     std::cout << std::dec;
 }
 
-// ── Commands ──────────────────────────────────────────────────────────────
+// ── Commands ───
 
 int cmd_encrypt(const std::string& in_path,
                 const std::string& out_path,
@@ -650,7 +650,7 @@ void process(const std::string& mode,
     }
 }
 
-// ── Entry point ───────────────────────────────────────────────────────────
+// ── Entry point 
 int cli_main(int argc, char* argv[]) {
     if (argc < 2) {
         print_usage(argv[0]);
