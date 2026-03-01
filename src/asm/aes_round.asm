@@ -1,0 +1,1 @@
+; aes_round.asm — placeholder (AES-NI rounds implemented via OpenSSL EVP)
