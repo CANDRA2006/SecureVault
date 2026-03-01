@@ -232,7 +232,7 @@ Size           Enc (MB/s)          Dec (MB/s)
 
 ## Lisensi
 
-Proyek ini dilisensikan di bawah **MIT License**. Lihat file [`LICENSE`](LICENSE) untuk detail lengkap.
+Proyek ini dilisensikan di bawah **Apache License 2.0**. Lihat file [`LICENSE`](LICENSE) untuk detail lengkap.
 
 ---
 
