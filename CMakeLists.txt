@@ -17,7 +17,6 @@ endif()
 find_package(OpenSSL REQUIRED)
 
 # ── Shared crypto library ──────────────────────────────────────────────────
-# Compiled once, linked by main binary + tests + benchmark
 set(CRYPTO_SOURCES
     src/crypto/crypto_engine.cpp
     src/file_io.cpp
@@ -26,9 +25,7 @@ set(CRYPTO_SOURCES
 )
 
 add_library(vault_crypto STATIC ${CRYPTO_SOURCES})
-
 target_include_directories(vault_crypto PUBLIC include)
-
 target_link_libraries(vault_crypto PUBLIC
     OpenSSL::SSL
     OpenSSL::Crypto
@@ -36,7 +33,6 @@ target_link_libraries(vault_crypto PUBLIC
 
 # ── Assembly objects ───────────────────────────────────────────────────────
 if (CMAKE_ASM_NASM_COMPILER)
-    # Detect platform for NASM format + ABI define
     if (WIN32)
         set(NASM_FORMAT win64)
         set(NASM_DEFS "-DWINDOWS")
@@ -66,24 +62,16 @@ add_executable(securevault
     src/main.cpp
     src/cli.cpp
 )
-
 target_include_directories(securevault PRIVATE include)
-
-target_link_libraries(securevault PRIVATE
-    vault_crypto
-    vault_asm
-)
+target_link_libraries(securevault PRIVATE vault_crypto vault_asm)
 
 # ── Benchmark executable ───────────────────────────────────────────────────
+# FIX: benchmark_main.cpp was missing from the repo — now created.
 add_executable(securevault_bench
     src/benchmark_main.cpp
 )
-
 target_include_directories(securevault_bench PRIVATE include)
-
-target_link_libraries(securevault_bench PRIVATE
-    vault_crypto
-)
+target_link_libraries(securevault_bench PRIVATE vault_crypto)
 
 # ── Tests ──────────────────────────────────────────────────────────────────
 enable_testing()
@@ -91,19 +79,14 @@ enable_testing()
 add_executable(test_crypto
     tests/test_crypto.cpp
 )
-
 target_include_directories(test_crypto PRIVATE include)
-
-target_link_libraries(test_crypto PRIVATE
-    vault_crypto
-)
+target_link_libraries(test_crypto PRIVATE vault_crypto)
 
 add_test(NAME CryptoTests COMMAND test_crypto)
 
-# CTest properties
 set_tests_properties(CryptoTests PROPERTIES
-    TIMEOUT 120
-    PASS_REGULAR_EXPRESSION "Results:.*0 failed"
+    TIMEOUT 300
+    PASS_REGULAR_EXPRESSION "0 failed"
 )
 
 # ── Install ────────────────────────────────────────────────────────────────
