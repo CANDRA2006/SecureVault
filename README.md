@@ -1,4 +1,4 @@
-# SecureVault v2.0
+## IN THE PROCESS
 
 **SecureVault** adalah aplikasi enkripsi file command-line berbasis **C++ + x86-64 Assembly** dengan kriptografi modern (AES-256-GCM), key derivation yang kuat (PBKDF2-HMAC-SHA256), dan format file berversi.
 
