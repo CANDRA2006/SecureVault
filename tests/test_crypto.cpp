@@ -1,10 +1,4 @@
-/**
-  *
- * Updated for fixed API:
- *  - DecryptResult now has metadata_corrupt field
- *  - Timestamp deserialization byte-order fix verified
- *  - Metadata tampering detection tested explicitly
- */
+
 
 #include "crypto_engine.h"
 #include "secure_mem.h"
