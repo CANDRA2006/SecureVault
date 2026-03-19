@@ -1,5 +1,5 @@
 # SecureVault
-
+ 
 **SecureVault** adalah alat enkripsi file berbasis command-line yang dibangun di atas AES-256-GCM dengan key derivation PBKDF2-HMAC-SHA256. Menyediakan enkripsi terautentikasi, penulisan file atomik, dan penyematan metadata opsional — dirancang untuk keamanan yang kuat dan dapat diaudit di Linux, macOS, dan Windows.
 
 ---
