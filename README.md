@@ -26,7 +26,7 @@ cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j$(nproc)
 
 # Enkripsi file
-./securevault enc rahasia.pdf rahasia.pdf.vault
+./securevault enc rahasia.pdf rahasia.pdf.vault 
 
 # Dekripsi file
 ./securevault dec rahasia.pdf.vault rahasia.pdf
